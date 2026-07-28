@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Chat Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-900 min-h-screen flex justify-center items-center p-6">
+
+    <div class="w-full max-w-3xl bg-zinc-800 rounded-xl shadow-xl p-8">
+
+        <!-- Header --> 
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold text-white">
+                📄 PDF Chat Assistant
+            </h1>
+
+            <form action="/logout" method="POST">
+                 <button
+                    class="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-lg transition"
+                    type="submit">
+                    Logout
+                </button>
+            </form>
+        </div>
+
+
+       <form action="/upload" method="POST" enctype="multipart/form-data">
+
+    <!-- PDF Upload -->
+    <div class="mb-6">
+        <label class="block text-white font-semibold mb-2">
+            Upload PDF
+        </label>
+
+        <input
+            type="file"
+            name="pdf"
+            accept=".pdf"
+            required
+            class="w-full bg-zinc-700 text-white rounded-lg p-3
+                   file:bg-blue-600 file:text-white file:border-0
+                   file:px-4 file:py-2 file:rounded-lg
+                   file:cursor-pointer cursor-pointer">
+    </div>
+
+    <!-- Question -->
+    <div class="mb-6">
+        <label class="block text-white font-semibold mb-2">
+            Ask a Question
+        </label>
+
+        <textarea
+            name="question"
+            rows="4"
+            placeholder="Ask anything about your uploaded PDF..."
+            required
+            class="w-full bg-zinc-700 text-white rounded-lg p-4 outline-none
+                   focus:ring-2 focus:ring-blue-500 resize-none">
+        </textarea>
+    </div>
+
+    <!-- Ask Button -->
+    <button
+        type="submit"
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white
+               font-semibold py-3 rounded-lg transition">
+        Ask Question
+    </button>
+
+   </form>
+
+<!-- AI Response -->
+<div class="mt-8">
+    <h2 class="text-xl font-semibold text-white mb-3">
+        AI Response
+    </h2>
+
+    <div class="bg-zinc-700 rounded-lg p-5 text-zinc-200 min-h-[180px]">
+        <% if(answer){ %>
+            <%= answer %>
+        <% } else { %>
+            Your answer will appear here...
+        <% } %>
+    </div>
+</div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+
+    function validatePassword() {
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return false; // Stops form submission
+    }
+
+    return true; // Allows form submission
+    }
+</script>
+
+</head>
+
+<body>
+    <div class="w-full min-h-screen flex items-center justify-center bg-zinc-800">
+
+        <form action="/signin" method="POST"
+              class="bg-zinc-700 flex flex-col gap-4 p-6 rounded-lg shadow-lg w-80"
+              onsubmit="return validatePassword()">
+              
+            <h1 class="text-white text-2xl font-semibold text-center">
+                Sign up
+            </h1>
+            <input
+                class="px-3 py-2 rounded bg-zinc-600 text-white outline-none"
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+            <input
+                class="px-3 py-2 rounded bg-zinc-600 text-white outline-none"
+                type="email"
+                name="email"
+                placeholder="Enter email"
+                required
+            >
+            
+            <input
+    id="password"
+    class="px-3 py-2 rounded bg-zinc-600 text-white outline-none"
+    type="password"
+    name="password"
+    placeholder="New password"
+    required
+>
+
+<input
+    id="confirmPassword"
+    class="px-3 py-2 rounded bg-zinc-600 text-white outline-none"
+    type="password"
+    name="confirmPassword"
+    placeholder="Confirm password"
+    required
+>
+            <button
+                class="bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+                type="submit">
+                Signin
+            </button>
+            <a class="text-blue-400 underline item-center" href="/">login</a>
+
+
+        </form>
+
+    </div>
+</body>
+</html>

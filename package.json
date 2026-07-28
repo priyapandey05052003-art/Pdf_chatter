@@ -1,0 +1,26 @@
+{
+  "name": "hello_pdf_chatter",
+  "version": "1.0.0",
+  "description": "\"this is my 1st full stack and ai project that involves frontend implemented the login, sign in and authorization system and take input a pdf that make us to chat with that\" ",
+  "license": "ISC",
+  "author": "Priya Gitti",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^1.18.1",
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "form-data": "^4.0.6",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.2.0",
+    "nodemon": "^3.1.14",
+    "pg": "^8.22.0",
+    "tailwind": "^4.0.0"
+  }
+}

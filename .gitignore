@@ -1,0 +1,24 @@
+# Environment files
+.env
+
+# Python
+ai_service/venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+
+# VS Code
+.vscode/
+
+# Temporary files
+temp/
+uploads/
+
+# OS
+.DS_Store
+# AI/editor metadata
+.agents/
+.neon
+skills-lock.json
